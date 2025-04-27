@@ -13,7 +13,7 @@ Fraud-Detection/
 ├── model-experiment-randomforest.ipynb
 ├──model-experiment-xgboost.ipynb
 └── model-inference.ipynb
-`` `
+```
 
 # Feature Engineering
 Nan მნიშვნელობების დამუშავება: შევქმენი კლასი Nan მნიშვნელობების შესავსებად. ამ დატასეტში იყო ისეთი სვეტები, რომლებიც დიდი პროცენტულობით შეიცავდა Nan-ს. Threshold-ად ავიღე შედარებით მაღალი რიცხვი: 0.95, რომ ძალიან ბევრი სვეტი არ გადამეყარა და მნიშვნელოვანი ინფორმაცია არ დამკარგვოდა. Numerical სვეტებში შესავსებად გამოვიყენე მედიანა, ხოლო categorical სვეტებში გამოვიყენე მოდა. 
