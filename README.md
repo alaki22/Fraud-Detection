@@ -3,6 +3,17 @@
 ჩემი მიდგომა: რადგანაც მოცემული დატასეტი დიდი იყო, დავჯავი 3 ნაწილად:train, validation და test 70/15/15 პროპორციით. შემდეგ ვქენი Feature Engineering, Feature Selection და ამ გასუფთავებულ და შემცირებულ დატასეტზე შემდეგ დავატრენინგე სხვადასხვა მოდელი და შევაფასე ROC_AUC-ის მიხედვით.
 
 # Repository Structure
+```
+Fraud-Detection/
+│
+├── README.md
+├── model-experiment-adaboost.ipynb
+├── model-experiment-desicion-tree.ipynb
+├── model-experiment-logistic-regression.ipynb
+├── model-experiment-randomforest.ipynb
+├──model-experiment-xgboost.ipynb
+└── model-inference.ipynb
+`` `
 
 # Feature Engineering
 Nan მნიშვნელობების დამუშავება: შევქმენი კლასი Nan მნიშვნელობების შესავსებად. ამ დატასეტში იყო ისეთი სვეტები, რომლებიც დიდი პროცენტულობით შეიცავდა Nan-ს. Threshold-ად ავიღე შედარებით მაღალი რიცხვი: 0.95, რომ ძალიან ბევრი სვეტი არ გადამეყარა და მნიშვნელოვანი ინფორმაცია არ დამკარგვოდა. Numerical სვეტებში შესავსებად გამოვიყენე მედიანა, ხოლო categorical სვეტებში გამოვიყენე მოდა. 
@@ -30,7 +41,7 @@ Nan მნიშვნელობების დამუშავება: �
    roc_auc_train - 0.8324381401019687
    roc_auc_val - 0.8357868499391151
    roc_auc_test - 0.8346919941223281
-5. XGBoost - ეს მოდელი აღმოჩნდა საბოლოოდ საუკეთესო. ამ მოდელის პარამეტრებზე სხვადასხვა ვარიანტი გავტესტე და საბოლოოდ ყველა კარგი შედეგი დადო მოდელმა რომლის პარამეტრებია: n_estimators=100, max_depth=10, learning_rate=0.1, min_child_weight=20, scale_pos_weight=2.33. scale_pos_weight - ეს პარამეტრი გამოიყენება არასდტაბილურობის დასაბალანსებლად. სხვები კი უმეტესად იმაზე ზრუნავენ Overfit არ მოხდეს.
+5. XGBoost - ეს მოდელი აღმოჩნდა საბოლოოდ საუკეთესო, არამარტო ROC_AUC, f1-იც ყველაზე მაღალი ჰქონდა. ამ მოდელის პარამეტრებზე სხვადასხვა ვარიანტი გავტესტე და საბოლოოდ ყველა კარგი შედეგი დადო მოდელმა რომლის პარამეტრებია: n_estimators=100, max_depth=10, learning_rate=0.1, min_child_weight=20, scale_pos_weight=2.33. scale_pos_weight - ეს პარამეტრი გამოიყენება არასდტაბილურობის დასაბალანსებლად. სხვები კი უმეტესად იმაზე ზრუნავენ Overfit არ მოხდეს.
   roc_auc_train - 0.959133545741893
   roc_auc_val - 0.9381028494801585
   roc_auc_test - 0.9383287621446105
